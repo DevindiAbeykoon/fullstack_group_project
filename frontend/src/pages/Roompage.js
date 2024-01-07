@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Modal, Button, Carousel } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Modal, Button, Carousel, Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../imgs/deluxe room.jpg';
 import image2 from '../imgs/family suites.jpg';
@@ -9,22 +10,16 @@ import imaged2 from '../imgs/presidential suites 2.jpg';
 import imaged3 from '../imgs/presidential suites 3.jpg';
 import imaged4 from '../imgs/presidential suites 4.jpg';
 import imaged5 from '../imgs/presidential suites 5.jpg';
-import imaged6 from '../imgs/presidential suites 6.jpg';
 import imagep1 from '../imgs/deluxe room 1.jpg';
 import imagep2 from '../imgs/deluxe room 2.jpg';
 import imagep3 from '../imgs/deluxe room 3.jpg';
 import imagep4 from '../imgs/deluxe room 4.jpg';
 import imagep5 from '../imgs/deluxe room 5.jpg';
-import imagep6 from '../imgs/deluxe room 6.jpg';
 import imagef1 from '../imgs/family suites 1.jpg';
 import imagef2 from '../imgs/family suites 2.jpg';
 import imagef3 from '../imgs/family suites 3.jpg';
 import imagef4 from '../imgs/family suites 4.jpg';
 import imagef5 from '../imgs/family suites 5.jpg';
-import imagef6 from '../imgs/family suites 6.jpg';
-
-
-
 import './roompage.css';
 
 function Roompage() {
@@ -32,17 +27,29 @@ function Roompage() {
   const [showModal2, setShowModal2] = useState(false);
   const [showModal3, setShowModal3] = useState(false);
   
-
   const handleCloseModal1 = () => setShowModal1(false);
   const handleShowModal1 = () => setShowModal1(true);
-  
    
   const handleCloseModal2 = () => setShowModal2(false);
   const handleShowModal2 = () => setShowModal2(true);
   
-    
   const handleCloseModal3 = () => setShowModal3(false);
   const handleShowModal3 = () => setShowModal3(true);
+
+  const [roomData, setRoomData] = useState([]);
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await axios.get('/api/rooms'); // Assuming you have an API endpoint to fetch room data
+        setRoomData(response.data);
+      } catch (error) {
+        console.error('Error fetching room data:', error);
+      }
+    };
+
+    fetchRooms();
+  }, []);
  
    
   return (
@@ -92,6 +99,26 @@ function Roompage() {
           </div>
         </div>
       </div>
+
+      <Container className="mt-5">
+      <Row>
+        {roomData.map((room) => (
+          <Col key={room._id} md={4} className="mb-4">
+            <Card>
+              <Card.Img variant="top" src={room.image} />
+              <Card.Body>
+                <Card.Title>{room.title}</Card.Title>
+                <Card.Text>{room.description}</Card.Text>
+                <Card.Text>{`Price: $${room.price}`}</Card.Text>
+                <Card.Text>{`Size: ${room.size}`}</Card.Text>
+                <Card.Text>{`Occupancy: ${room.occupancy}`}</Card.Text>
+                <Card.Text>{`Amenities: ${room.amenities}`}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
     
       <Modal show={showModal1} onHide={handleCloseModal1} size="lg">
         <Modal.Header closeButton>
@@ -115,9 +142,6 @@ function Roompage() {
             <Carousel.Item>
               <img className="d-block w-100" src={imaged5} alt="slide5" />
             </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={imaged6} alt="slide6" />
-            </Carousel.Item>
           </Carousel>
 
           <ul class="list-group">
@@ -129,7 +153,6 @@ function Roompage() {
         </Modal.Body>
         <Modal.Footer>
         <Button variant="outline-dark" onClick={handleCloseModal1}>
-            Check
           </Button>
         </Modal.Footer>
       </Modal>
@@ -156,9 +179,6 @@ function Roompage() {
             <Carousel.Item>
               <img className="d-block w-100" src={imagep5} alt="slide5" />
             </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={imagep6} alt="slide6" />
-            </Carousel.Item>
           </Carousel>
 
             <ul class="list-group">
@@ -169,8 +189,8 @@ function Roompage() {
             </ul>
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="outline-dark" onClick={handleCloseModal1}>
-            Check
+        <Button variant="outline-dark" onClick={handleCloseModal2}>
+            Close
           </Button>
 
         </Modal.Footer>
@@ -198,9 +218,6 @@ function Roompage() {
             <Carousel.Item>
               <img className="d-block w-100" src={imagef5} alt="slide5" />
             </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={imagef6} alt="slide6" />
-            </Carousel.Item>
           </Carousel>
 
           <ul class="list-group">
@@ -212,8 +229,8 @@ function Roompage() {
 
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="outline-dark" onClick={handleCloseModal1}>
-            Check
+        <Button variant="outline-dark" onClick={handleCloseModal3}>
+            Close
           </Button>
 
         </Modal.Footer>
@@ -223,4 +240,3 @@ function Roompage() {
 }
 
 export default Roompage;
-

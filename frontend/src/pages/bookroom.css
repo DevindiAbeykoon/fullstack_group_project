@@ -1,0 +1,72 @@
+h2 {
+    font-size: 24px;
+    color: #454444;
+    margin-bottom: 20px !important;
+  }
+
+
+  form {
+    margin-top: 20px !important;
+  }
+
+  .form-label {
+    margin-left: 5px;
+    font-weight: bold !important;
+  }
+  
+  .form-group {
+    margin-bottom: 20px !important;
+  }
+
+  .container {
+    padding: 20px !important;
+  }
+  
+  
+  .carousel {
+    margin-top: 20px !important;
+  }
+  
+  .carousel img {
+    object-fit: cover;
+    height: 300px; /* Adjust the height as needed */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .mt-4 {
+    margin-top: 15px !important;
+  }
+
+
+  .react-datepicker-wrapper {
+    width: 100% !important;
+  }
+  
+ 
+  button {
+    margin-top: 20px !important;
+  }
+  
+
+.btn-outline-dark {
+    background-color: #e59366;
+    border-color: #e59366 !important;
+  }
+
+  .btn-outline-dark:hover {
+    background-color: #e59366; 
+    border-color: #e59366 !important;
+  }
+
+  select.form-control {
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+  }
+
+
+  

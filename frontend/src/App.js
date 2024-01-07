@@ -1,14 +1,23 @@
+import React from 'react'
+import { Navbar } from 'react-bootstrap'
+import Addroom from './pages/Addroom'
 
-import './App.css';
-import Roompage from './pages/Roompage';
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Navbar/>
+      <Addroom/>
       
-      <Roompage/>
+      
+      
+
     </div>
-  );
+    
+  )
 }
 
-export default App;
+export default App
+
