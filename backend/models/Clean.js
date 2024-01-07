@@ -8,6 +8,10 @@ const CleanScheema = new Schema({
     type: Boolean,
     default: false,
   },
+  cleaningTime: {
+    type: Date,
+    required: true
+  }
 });
 
 module.exports = Clean = mongoose.model("clean", CleanScheema);
