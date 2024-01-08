@@ -1,0 +1,13 @@
+.label {
+    margin: 0;
+    margin-top: 25px;
+}
+
+label {
+    display: block;
+}
+
+input {
+    width: 100%;
+}
+

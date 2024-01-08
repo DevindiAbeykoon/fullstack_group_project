@@ -1,0 +1,50 @@
+
+.add-staff-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column !important;
+  }
+  
+  label {
+    margin-top: 10px !important;
+  }
+  
+  input,
+  textarea,
+  button,
+  select {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px !important;
+  }
+  
+  
+  .react-datepicker-wrapper {
+    width: 100% !important;
+  }
+  
+ 
+  button {
+    margin-top: 20px !important;
+  }
+
+.btn-outline-dark {
+    background-color: #e59366;
+    border-color: #e59366 !important;
+  }
+
+  .btn-outline-dark:hover {
+    background-color: #e59366; 
+    border-color: #e59366 !important;
+  }

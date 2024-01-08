@@ -1,0 +1,56 @@
+
+.centered-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px !important;
+  }
+
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+    height: 300px;
+    width:  25rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .card-img-top {
+    max-height: 250px;
+    object-fit: cover !important;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa !important; 
+  }
+  .card-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .card-text {
+    color: #141111 !important; 
+  }
+
+   
+  button {
+    margin-top: 20px !important;
+  }
+
+  .btn-outline-dark {
+    background-color: #e59366;
+    border-color: #e59366 !important;
+  }
+
+  .btn-outline-dark:hover {
+    background-color: #e59366; 
+    border-color: #e59366 !important;
+  }
+
+  
+
+
+  
+
